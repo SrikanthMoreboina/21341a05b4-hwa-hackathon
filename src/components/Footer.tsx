@@ -13,9 +13,9 @@ export function Footer() {
           <p className="text-sm text-white/60">Quality essentials for your trail companion.</p>
         </div>
         <nav className="flex gap-6">
-          <ButtonLink href="/">Home</ButtonLink>
-          <ButtonLink href="/products">Shop</ButtonLink>
-          <ButtonLink href="/cart">Cart</ButtonLink>
+          <FooterLink href="/">Home</FooterLink>
+          <FooterLink href="/products">Shop</FooterLink>
+          <FooterLink href="/cart">Cart</FooterLink>
         </nav>
         <p className="text-xs text-white/40">&copy; 2026 Pawtrail. All rights reserved.</p>
       </div>
@@ -23,11 +23,11 @@ export function Footer() {
   )
 }
 
-function ButtonLink({ href, children }: { href: string; children: React.ReactNode }) {
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Link
       href={href}
-      className="inline-flex items-center justify-center px-4 py-2 rounded-lg border border-white/20 bg-white/5 text-white/80 text-sm font-medium hover:bg-white/10 hover:text-white transition-colors"
+      className="text-sm text-white/60 hover:text-white transition-colors"
     >
       {children}
     </Link>
