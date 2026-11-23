@@ -16,7 +16,7 @@ export function ProductGrid() {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Featured Products</h2>
-          <p className="text-gray-600 dark:text-gray-400 text-sm">Quality essentials for your trail companion.</p>
+          <p className="text-white/60 text-sm">Quality essentials for your trail companion.</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {CATEGORIES.map((cat) => (
@@ -24,7 +24,7 @@ export function ProductGrid() {
               key={cat}
               variant="outline"
               size="sm"
-              className={cn(cat === category && "bg-black text-white border-black dark:bg-white dark:text-black")}
+              className={cn(cat === category && "bg-white text-black border-white")}
               onClick={() => setCategory(cat)}
             >
               {cat}
@@ -39,7 +39,7 @@ export function ProductGrid() {
       </div>
       {filtered.length === 0 && (
         <div className="py-20 text-center">
-          <p className="text-gray-600 dark:text-gray-400">No products found in this category.</p>
+          <p className="text-white/60">No products found in this category.</p>
         </div>
       )}
     </section>

@@ -17,9 +17,9 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Card className="group relative overflow-hidden">
-      <div className="aspect-square relative overflow-hidden bg-gray-100 dark:bg-gray-800">
+      <div className="aspect-square relative overflow-hidden bg-white/5">
         {outOfStock && (
-          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
             <span className="text-white font-semibold uppercase text-sm tracking-wider">Out of Stock</span>
           </div>
         )}
@@ -35,7 +35,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <button
             aria-label={`Add ${product.name} to cart`}
             className={cn(
-              "p-2.5 rounded-full bg-white text-black shadow hover:bg-gray-100 transition-colors",
+              "p-2.5 rounded-full bg-white text-black shadow hover:bg-gray-200 transition-colors",
               outOfStock ? "opacity-50 pointer-events-none" : ""
             )}
             disabled={outOfStock}
@@ -60,12 +60,12 @@ export function ProductCard({ product }: ProductCardProps) {
       <CardContent className="pt-4">
         <div className="flex justify-between items-start gap-2">
           <CardTitle className="text-base line-clamp-1">{product.name}</CardTitle>
-          <span className="text-xs font-semibold text-gray-400">{product.category}</span>
+          <span className="text-xs font-semibold text-white/50">{product.category}</span>
         </div>
         <div className="flex items-center gap-1 mt-2">
-          <span className="text-xs text-yellow-500" aria-hidden="true">★</span>
+          <span className="text-xs text-yellow-400" aria-hidden="true">★</span>
           <span className="text-sm font-medium">{product.rating.toFixed(1)}</span>
-          <span className="text-xs text-gray-500">({product.reviews})</span>
+          <span className="text-xs text-white/50">({product.reviews})</span>
         </div>
         <div className="mt-3 flex items-baseline gap-1">
           <span className="text-lg font-bold">₹{product.price.toFixed(2)}</span>
